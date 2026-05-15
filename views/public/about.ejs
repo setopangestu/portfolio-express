@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> — About Seto Aji Pangestu</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="floating-tech">
+        <div class="tech-bubble">HTML5</div>
+        <div class="tech-bubble">CSS3</div>
+        <div class="tech-bubble">JavaScript</div>
+        <div class="tech-bubble">PHP</div>
+        <div class="tech-bubble">MySQL</div>
+        <div class="tech-bubble">Node.js</div>
+        <div class="tech-bubble">Laravel</div>
+        <div class="tech-bubble">Express</div>
+        <div class="tech-bubble">Supabase</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Seto<span>Aji</span></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about" class="active">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/experiences">Experience</a>
+                <a href="/educations">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow"><i class="fas fa-user-astronaut"></i> TENTANG SAYA</span>
+                <h2>Kenali Lebih Dekat</h2>
+                <p>Junior Web Developer | Fullstack Enthusiast | Problem Solver</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-photo">
+                    <div class="photo-frame">
+                        <div class="photo-placeholder">
+                            <img src="https://portofolio.onlinet.id/storage/photos/profile/aiESq7ZWX4KkXORlpEBOIf88qSvgWokAfJs433rj.png" alt="Seto Aji Pangestu">
+                        </div>
+                        <div class="photo-badge">
+                            <span><i class="fas fa-code"></i> Web Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-bio">
+                    <h3>Halo, saya <span class="highlight">Seto Aji Pangestu</span></h3>
+                    <p>Saya adalah seorang <strong>Junior Web Developer</strong> lulusan <strong>SMK Informatika Utama</strong> dengan spesialisasi di bidang pengembangan web dan solusi digital. Saya memiliki hasrat besar untuk menciptakan aplikasi yang tidak hanya fungsional, tetapi juga intuitif, efisien, dan memberikan dampak positif bagi pengguna.</p>
+                    <p>Saya memulai karir profesional saya melalui program <strong>Praktik Kerja Lapangan (PKL) di PT Patra Energy Swadaya Engineering</strong>. Di sana, saya terlibat langsung dalam pengembangan dan pemeliharaan aplikasi internal perusahaan. Pengalaman ini membekali saya dengan pemahaman mendalam tentang alur kerja tim IT, kebutuhan bisnis, serta pentingnya kode yang bersih dan terstruktur.</p>
+                    <p>Saat ini, saya terus memperdalam kemampuan di bidang <strong>fullstack development</strong> menggunakan <strong>Node.js, Express, dan Supabase</strong>. Saya percaya bahwa teknologi terbaik adalah yang menyelesaikan masalah nyata dengan cara yang elegan.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Tahun Pengalaman</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Proyek Selesai</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Teknologi Dikuasai</div>
+                        </div>
+                    </div>
+
+                    <div class="about-contact">
+                        <a href="/skills" class="btn btn-primary"><i class="fas fa-cogs"></i> Lihat Kemampuan Saya →</a>
+                        <a href="/experiences" class="btn btn-outline"><i class="fas fa-briefcase"></i> Lihat Pengalaman →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-section">
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Misi Saya</h3>
+                    <p>Membangun solusi digital yang inovatif, mudah diakses, dan memberikan nilai nyata bagi bisnis dan masyarakat.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Visi Saya</h3>
+                    <p>Menjadi fullstack developer handal yang berkontribusi dalam proyek-proyek berskala global dan menginspirasi generasi muda di bidang teknologi.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Nilai Saya</h3>
+                    <p>Continuous learning, clean code, kolaborasi tim yang solid, dan selalu berfokus pada solusi (problem-solving).</p>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p class="quote-text">"Kode yang baik adalah kode yang dapat dipahami oleh manusia dan dijalankan dengan baik oleh mesin. Saya percaya pada kekuatan kolaborasi dan pembelajaran berkelanjutan."</p>
+                <p class="quote-author">— Seto Aji Pangestu</p>
+            </div>
+
+            <div class="funfacts-section">
+                <h3><i class="fas fa-star"></i> Fakta Menarik Tentang Saya</h3>
+                <div class="funfacts-grid">
+                    <div class="funfact-item"><i class="fas fa-headphones"></i> Coding sambil mendengarkan ceramah gufron</div>
+                    <div class="funfact-item"><i class="fas fa-mug-hot"></i> Kopi adalah best friend coding</div>
+                    <div class="funfact-item"><i class="fas fa-moon"></i> Night owl developer (kreatif di malam hari)</div>
+                    <div class="funfact-item"><i class="fas fa-book"></i> Mampu memperbaiki nilai tukar rupiah</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Seto<span>Aji</span></div>
+                    <p>Junior Web Developer passionate about building digital solutions that make a difference.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/skills">Skills</a>
+                    <a href="/experiences">Experience</a>
+                    <a href="/educations">Education</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/setopangestu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/seto-aji-pangestu-78a297403/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:seto@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Seto Aji Pangestu | Built with Express.js + Supabase | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        .photo-frame {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 30px;
+            padding: 8px;
+            position: relative;
+        }
+        .photo-placeholder {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 24px;
+            height: 380px;
+            overflow: hidden;
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        .about-bio h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .about-bio p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+        .about-contact {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .mission-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .mission-card {
+            background: var(--bg-alt);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .mission-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        .mission-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        .mission-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .mission-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary-light), #FFF0E8);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .quote-author {
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .funfacts-section {
+            margin-top: 40px;
+        }
+        .funfacts-section h3 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+        .funfacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .funfact-item {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .funfact-item i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        .funfact-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .mission-section {
+                grid-template-columns: 1fr;
+            }
+            .about-stats {
+                justify-content: space-around;
+            }
+            .quote-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

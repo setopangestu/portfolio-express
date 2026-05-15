@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <p>Selamat datang, Admin!</p>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/admin/comments">💬 Comments</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <h2>Daftar Project</h2>
+    
+    <a href="/admin/projects-add">+ Tambah Project</a>
+
+    <% if (projects.length > 0) { %>
+        <% projects.forEach(project => { %>
+            <div class="project">
+                <h3><%= project.title %></h3>
+                <p><%= project.description %></p>
+                <% if (project.image_url) { %>
+                    <span style="color: green; font-size: 12px;">📷 Ada gambar</span><br>
+                <% } %>
+                <a href="/admin/projects-edit/<%= project.id %>">✏️ Edit</a>
+                <a href="/admin/projects-delete/<%= project.id %>" onclick="return confirm('Yakin hapus?')">🗑️ Hapus</a>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>Belum ada project.</p>
+    <% } %>
+</body>
+</html>

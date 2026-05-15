@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tambah Project</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Tambah Project Baru</h1>
+    
+    <form method="POST" action="/admin/projects-add">
+        <div>
+            <label>Judul Project:</label><br>
+            <input type="text" name="title" required>
+        </div>
+        
+        <div>
+            <label>Deskripsi:</label><br>
+            <textarea name="description" rows="5" required></textarea>
+        </div>
+
+        <div>
+            <label>GitHub URL:</label><br>
+            <input type="text" name="github_url" placeholder="https://github.com/username/repo">
+        </div>
+        
+        <div>
+            <label>Live URL:</label><br>
+            <input type="text" name="live_url" placeholder="https://example.com">
+        </div>
+        
+        <div>
+            <label>Tech Stack (pisahkan dengan koma):</label><br>
+            <input type="text" name="tech_stack" placeholder="HTML, CSS, JavaScript">
+        </div>
+        
+        <button type="submit">Simpan</button>
+        <a href="/admin">Batal</a>
+    </form>
+</body>
+</html>

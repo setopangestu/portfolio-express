@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Skill</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>✏️ Edit Skill</h1>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <form method="POST" action="/admin/skills-edit/<%= skill.id %>">
+        <div>
+            <label>Nama Skill:</label><br>
+            <input type="text" name="name" value="<%= skill.name %>" required>
+        </div>
+        
+        <div>
+            <label>Level:</label><br>
+            <select name="level">
+                <option value="Beginner" <%= skill.level === 'Beginner' ? 'selected' : '' %>>Beginner</option>
+                <option value="Intermediate" <%= skill.level === 'Intermediate' ? 'selected' : '' %>>Intermediate</option>
+                <option value="Advanced" <%= skill.level === 'Advanced' ? 'selected' : '' %>>Advanced</option>
+                <option value="Expert" <%= skill.level === 'Expert' ? 'selected' : '' %>>Expert</option>
+            </select>
+        </div>
+        
+        <button type="submit">💾 Update Skill</button>
+        <a href="/admin/skills">Batal</a>
+    </form>
+</body>
+</html>

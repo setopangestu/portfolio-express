@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Comments</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>💬 Manage Comments</h1>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/admin/comments">💬 Comments</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <h2>Daftar Komentar</h2>
+    
+    <% if (comments && comments.length > 0) { %>
+        <% for(var i = 0; i < comments.length; i++) { %>
+            <% var comment = comments[i]; %>
+            <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #ddd;">
+                <div>
+                    <strong><%= comment.name %></strong> 
+                    <small>(<%= comment.email || 'no email' %>)</small>
+                    <br>
+                    <small>Project: <strong><%= comment.projects ? comment.projects.title : 'Unknown' %></strong></small>
+                    <br>
+                    <small><%= new Date(comment.created_at).toLocaleString() %></small>
+                </div>
+                <p><%= comment.comment %></p>
+                <div>
+                    <% if (!comment.is_approved) { %>
+                        <a href="/admin/comments-approve/<%= comment.id %>">✅ Approve</a>
+                    <% } else { %>
+                        <span>✓ Approved</span>
+                    <% } %>
+                    &nbsp;|&nbsp;
+                    <a href="/admin/comments-delete/<%= comment.id %>" onclick="return confirm('Yakin hapus?')">🗑️ Delete</a>
+                </div>
+            </div>
+        <% } %>
+    <% } else { %>
+        <p>Belum ada komentar.</p>
+    <% } %>
+    
+    <a href="/admin">← Back to Dashboard</a>
+</body>
+</html>

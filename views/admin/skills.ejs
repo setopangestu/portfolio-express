@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Skills</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>⚡ Manage Skills</h1>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <h2>Daftar Skill</h2>
+    
+    <a href="/admin/skills-add">+ Tambah Skill</a>
+    
+    <% if (skills.length > 0) { %>
+        <% skills.forEach(skill => { %>
+            <div class="project">
+                <h3><%= skill.name %></h3>
+                <p>Level: <%= skill.level %></p>
+                <a href="/admin/skills-edit/<%= skill.id %>">✏️ Edit</a>
+                <a href="/admin/skills-delete/<%= skill.id %>" onclick="return confirm('Yakin hapus?')">🗑️ Hapus</a>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>Belum ada skill.</p>
+    <% } %>
+</body>
+</html>

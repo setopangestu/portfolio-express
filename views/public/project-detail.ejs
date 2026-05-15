@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> — Project Detail</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-tech">
+        <div class="tech-bubble">Detail</div>
+        <div class="tech-bubble">Project</div>
+        <div class="tech-bubble">Case Study</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Seto<span>Aji</span></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/experiences">Experience</a>
+                <a href="/educations">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="project-detail">
+                <div class="project-header">
+                    <h2><i class="fas fa-code-branch"></i> <%= project.title %></h2>
+                    <p class="project-desc"><%= project.description %></p>
+                </div>
+
+                <div class="project-meta">
+                    <% if (project.tech_stack && project.tech_stack.length > 0) { %>
+                        <div class="meta-item">
+                            <h4><i class="fas fa-tools"></i> Technologies Used</h4>
+                            <div class="tech-stack">
+                                <% project.tech_stack.forEach(tech => { %>
+                                    <span class="tech-tag"><%= tech %></span>
+                                <% }); %>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="project-actions">
+                    <% if (project.github_url) { %>
+                        <a href="<%= project.github_url %>" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View on GitHub</a>
+                    <% } %>
+                    <% if (project.live_url) { %>
+                        <a href="<%= project.live_url %>" target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="/#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Seto<span>Aji</span></div>
+                    <p>Junior Web Developer passionate about building digital solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a><a href="/about">About</a><a href="/skills">Skills</a><a href="/experiences">Experience</a><a href="/educations">Education</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/setopangestu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/seto-aji-pangestu-78a297403/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:seto@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Seto Aji Pangestu | Built with Express.js + Supabase</p></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <style>
+        .project-header h2 i {
+            color: var(--primary);
+            margin-right: 12px;
+        }
+        .project-desc {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        .project-meta {
+            margin: 32px 0;
+        }
+        .meta-item {
+            margin-bottom: 24px;
+        }
+        .meta-item h4 {
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .meta-item h4 i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        .project-actions {
+            display: flex;
+            gap: 16px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</body>
+</html>

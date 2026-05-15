@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> — Education</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="floating-tech">
+        <div class="tech-bubble">Learning</div>
+        <div class="tech-bubble">Growth</div>
+        <div class="tech-bubble">Future</div>
+        <div class="tech-bubble">Knowledge</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Seto<span>Aji</span></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/experiences">Experience</a>
+                <a href="/educations" class="active">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow"><i class="fas fa-graduation-cap"></i> PENDIDIKAN & SERTIFIKASI</span>
+                <h2>Perjalanan Akademis</h2>
+                <p>Landasan ilmu yang membangun karier saya sebagai developer profesional</p>
+            </div>
+
+            <div class="education-profile">
+                <p><i class="fas fa-quote-left"></i> Saya adalah lulusan <strong>SMK Informatika Utama</strong> dengan jurusan <strong>Rekayasa Perangkat Lunak (RPL)</strong>. Selama masa sekolah, saya aktif dalam berbagai proyek coding dan kompetisi, yang membangkitkan minat saya terhadap dunia web development. Kurikulum yang berfokus pada praktik langsung dan studi kasus nyata membekali saya dengan keterampilan teknis yang solid.</p>
+            </div>
+
+            <div class="education-list">
+                <% if (educations.length > 0) { %>
+                    <% educations.forEach(edu => { %>
+                        <div class="education-item">
+                            <h3><%= edu.degree %></h3>
+                            <h4><%= edu.institution %></h4>
+                            <div class="education-year"><i class="far fa-calendar-alt"></i> <%= edu.year %></div>
+                            <p><%= edu.description %></p>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>Belum ada data pendidikan yang dimasukkan admin.</p>
+                <% } %>
+            </div>
+
+            <div class="certification-section">
+                <h3><i class="fas fa-certificate"></i> Sertifikasi & Pelatihan Pendukung</h3>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="cert-info">
+                            <h4>Uji Kompetensi Keahlian (RPL)</h4>
+                            <p>LSP SMK Informatika Utama | 2023</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="cert-info">
+                            <h4>Operator Komputer Muda</h4>
+                            <p>Lembaga Sertifikasi Profesi | 2022</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-globe"></i></div>
+                        <div class="cert-info">
+                            <h4>Dasar-Dasar Pemrograman Web</h4>
+                            <p>Online Course & Workshop</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="cert-note"><i class="fas fa-info-circle"></i> Sertifikasi ini membekali saya dengan fondasi kuat dalam logika pemrograman, basis data, dan best practice pengembangan web.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Seto<span>Aji</span></div>
+                    <p>Junior Web Developer passionate about building digital solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a><a href="/about">About</a><a href="/skills">Skills</a><a href="/experiences">Experience</a><a href="/educations">Education</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/setopangestu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/seto-aji-pangestu-78a297403/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:seto@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Seto Aji Pangestu | Built with Express.js + Supabase</p></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <style>
+        .education-profile {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.05rem;
+            color: var(--gray-dark);
+            background: var(--bg-alt);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+        }
+        .education-profile i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        .education-year i {
+            margin-right: 6px;
+        }
+        .certification-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+        .certification-section h3 {
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 1.5rem;
+        }
+        .certification-section h3 i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .cert-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-alt);
+            padding: 24px;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .cert-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+        .cert-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        .cert-info h4 {
+            margin-bottom: 8px;
+        }
+        .cert-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        .cert-note {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        .cert-note i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Experiences</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>💼 Manage Experiences</h1>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <h2>Daftar Pengalaman</h2>
+    
+    <a href="/admin/experiences-add">+ Tambah Pengalaman</a>
+    
+    <% if (experiences.length > 0) { %>
+        <% experiences.forEach(exp => { %>
+            <div class="project">
+                <h3><%= exp.position %></h3>
+                <p><%= exp.company %></p>
+                <a href="/admin/experiences-edit/<%= exp.id %>">✏️ Edit</a> |
+                <a href="/admin/experiences-delete/<%= exp.id %>" onclick="return confirm('Yakin hapus?')">🗑️ Hapus</a>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>Belum ada pengalaman.</p>
+    <% } %>
+</body>
+</html>

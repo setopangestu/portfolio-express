@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> — Portfolio</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="floating-tech">
+        <div class="tech-bubble">HTML5</div>
+        <div class="tech-bubble">CSS3</div>
+        <div class="tech-bubble">JavaScript</div>
+        <div class="tech-bubble">PHP</div>
+        <div class="tech-bubble">MySQL</div>
+        <div class="tech-bubble">Node.js</div>
+        <div class="tech-bubble">Laravel</div>
+        <div class="tech-bubble">Express</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Seto<span>Aji</span></div>
+            <div class="menu-toggle">☰</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/experiences">Experience</a>
+                <a href="/educations">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-badge">✨ PORTFOLIO 2026 ✨</div>
+                <h1>Hi, I'm <span class="highlight">Seto Aji Pangestu</span></h1>
+                <p class="hero-subtitle">Junior Web Developer | Fullstack Enthusiast</p>
+                <p class="hero-desc">Membangun solusi digital yang cepat, efisien, dan berorientasi pada pengguna. Berpengalaman dalam Laravel, Node.js, Express, dan Supabase.</p>
+                <div class="hero-buttons">
+                    <a href="/#projects" class="btn btn-primary">View Projects →</a>
+                    <a href="/about" class="btn btn-outline">More About Me</a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="section-header">
+                    <span class="eyebrow">📁 RECENT BUILDS</span>
+                    <h2>Featured Projects</h2>
+                    <p>Beberapa project unggulan yang pernah saya kerjakan selama perjalanan karir saya</p>
+                </div>
+                
+                <% if (projects.length > 0) { %>
+                    <div class="projects-grid">
+                        <% projects.forEach(project => { %>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <% if (project.image_url) { %>
+                                        <img src="<%= project.image_url %>" alt="<%= project.title %>">
+                                    <% } else { %>
+                                        <div style="background: linear-gradient(135deg, #FFE8E0, #FFF0E8); height: 220px; display: flex; align-items: center; justify-content: center;">
+                                            <span style="font-size: 3rem;">🚀</span>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <div class="project-content">
+                                    <h3><%= project.title %></h3>
+                                    <p><%= project.description %></p>
+                                    <% if (project.tech_stack && project.tech_stack.length > 0) { %>
+                                        <div class="tech-stack">
+                                            <% project.tech_stack.forEach(tech => { %>
+                                                <span class="tech-tag"><%= tech %></span>
+                                            <% }); %>
+                                        </div>
+                                    <% } %>
+                                    <a href="/project/<%= project.id %>" class="btn btn-outline" style="margin-top: 8px;">Learn More →</a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                <% } else { %>
+                    <p style="text-align: center;">Belum ada project. Admin bisa tambahin lewat panel admin!</p>
+                <% } %>
+            </section>
+
+            <!-- ========== KOMENTAR SECTION (TETAP ADA) ========== -->
+            <section class="comments-section">
+                <div class="section-header">
+                    <span class="eyebrow">💬 TESTIMONIALS</span>
+                    <h2>What People Say</h2>
+                    <p>Apa kata mereka tentang saya dan karya yang telah dibuat</p>
+                </div>
+                
+                <div id="comments-list">
+                    <p style="text-align: center;">Loading komentar...</p>
+                </div>
+                
+                <div class="comment-form-wrapper">
+                    <h3>Tinggalkan Komentar atau Testimoni</h3>
+                    <form id="commentForm">
+                        <div>
+                            <input type="text" id="commentName" placeholder="Nama Lengkap Anda *" required>
+                        </div>
+                        <div>
+                            <input type="email" id="commentEmail" placeholder="Alamat Email (opsional)">
+                        </div>
+                        <div>
+                            <textarea id="commentText" rows="4" placeholder="Tulis komentar atau testimoni Anda di sini... *" required></textarea>
+                        </div>
+                        <button type="submit">Kirim Komentar</button>
+                    </form>
+                    <div id="commentMessage"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Seto<span>Aji</span></div>
+                    <p>Junior Web Developer yang passionate dalam membangun solusi digital berkualitas dan memberikan dampak positif melalui teknologi.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/skills">Skills</a>
+                    <a href="/experiences">Experience</a>
+                    <a href="/educations">Education</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect With Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/setoaji" target="_blank">GH</a>
+                        <a href="https://linkedin.com/in/seto-aji-pangestu" target="_blank">IN</a>
+                        <a href="mailto:seto.aji@example.com">📧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Seto Aji Pangestu | Built with Express.js + Supabase | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        // Load komentar dari API
+        async function loadComments() {
+            try {
+                const response = await fetch('/api/comments/home');
+                const comments = await response.json();
+                
+                const container = document.getElementById('comments-list');
+                if (comments.length === 0) {
+                    container.innerHTML = '<p style="text-align: center;">Belum ada komentar atau testimoni. Jadilah yang pertama!</p>';
+                    return;
+                }
+                
+                container.innerHTML = comments.map(comment => `
+                    <div class="comment-card">
+                        <div class="comment-header">
+                            <span class="comment-name">${escapeHtml(comment.name)}</span>
+                            <span class="comment-date">${new Date(comment.created_at).toLocaleDateString('id-ID')}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(comment.comment)}</div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading comments:', error);
+                document.getElementById('comments-list').innerHTML = '<p style="text-align: center;">Gagal memuat komentar. Silakan refresh halaman.</p>';
+            }
+        }
+
+        // Kirim komentar
+        document.getElementById('commentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('commentName').value;
+            const email = document.getElementById('commentEmail').value;
+            const comment = document.getElementById('commentText').value;
+            
+            if (!name || !comment) {
+                showMessage('Nama dan komentar wajib diisi!', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/comments/home', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, comment })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showMessage(result.message, 'success');
+                    document.getElementById('commentName').value = '';
+                    document.getElementById('commentEmail').value = '';
+                    document.getElementById('commentText').value = '';
+                    loadComments();
+                } else {
+                    showMessage(result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Error mengirim komentar. Silakan coba lagi.', 'error');
+            }
+        });
+
+        function showMessage(msg, type) {
+            const msgDiv = document.getElementById('commentMessage');
+            msgDiv.textContent = msg;
+            msgDiv.className = type;
+            setTimeout(() => {
+                msgDiv.textContent = '';
+                msgDiv.className = '';
+            }, 5000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        loadComments();
+    </script>
+</body>
+</html>

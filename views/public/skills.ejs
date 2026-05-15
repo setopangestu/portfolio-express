@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> — Skills & Competencies</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="floating-tech">
+        <div class="tech-bubble">HTML5</div>
+        <div class="tech-bubble">CSS3</div>
+        <div class="tech-bubble">JavaScript</div>
+        <div class="tech-bubble">PHP</div>
+        <div class="tech-bubble">MySQL</div>
+        <div class="tech-bubble">Node.js</div>
+        <div class="tech-bubble">Laravel</div>
+        <div class="tech-bubble">Express</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Seto<span>Aji</span></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills" class="active">Skills</a>
+                <a href="/experiences">Experience</a>
+                <a href="/educations">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="section-header">
+                <span class="eyebrow"><i class="fas fa-cogs"></i> KEMAMPUAN TEKNIS</span>
+                <h2>Technical Skills & Tools</h2>
+                <p>Sebagai seorang pengembang web yang antusias, berikut adalah teknologi yang sering saya gunakan untuk membangun solusi digital berkualitas.</p>
+            </div>
+
+            <div class="skills-intro">
+                <p><i class="fas fa-quote-left"></i> Saya memiliki fondasi yang kuat dalam pengembangan web, baik di sisi frontend maupun backend. Saya selalu berusaha mengikuti perkembangan teknologi dan menerapkan best practices dalam setiap proyek.</p>
+            </div>
+
+            <div class="skills-category">
+                <h3><i class="fas fa-palette"></i> Frontend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-html5 skill-icon"></i><h3>HTML5</h3><p class="skill-level">Advanced</p></div>
+                    <div class="skill-card"><i class="fab fa-css3-alt skill-icon"></i><h3>CSS3</h3><p class="skill-level">Advanced</p></div>
+                    <div class="skill-card"><i class="fab fa-js skill-icon"></i><h3>JavaScript</h3><p class="skill-level">Intermediate</p></div>
+                    <div class="skill-card"><i class="fab fa-react skill-icon"></i><h3>React</h3><p class="skill-level">Beginner</p></div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3><i class="fas fa-server"></i> Backend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-php skill-icon"></i><h3>PHP</h3><p class="skill-level">Intermediate</p></div>
+                    <div class="skill-card"><i class="fab fa-node-js skill-icon"></i><h3>Node.js</h3><p class="skill-level">Intermediate</p></div>
+                    <div class="skill-card"><i class="fas fa-code-branch skill-icon"></i><h3>Express.js</h3><p class="skill-level">Intermediate</p></div>
+                    <div class="skill-card"><i class="fab fa-laravel skill-icon"></i><h3>Laravel</h3><p class="skill-level">Intermediate</p></div>
+                </div>
+                <p class="skills-note"><i class="fas fa-info-circle"></i> Berpengalaman dalam membangun REST API, autentikasi, dan integrasi database.</p>
+            </div>
+
+            <div class="skills-category">
+                <h3><i class="fas fa-database"></i> Database & Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fas fa-database skill-icon"></i><h3>MySQL</h3><p class="skill-level">Intermediate</p></div>
+                    <div class="skill-card">
+                        <i class="fas fa-bolt skill-icon" style="color: #f06529;"></i>
+                        <h3>Supabase</h3>
+                        <p class="skill-level">Intermediate</p>
+                      </div>
+                                          <div class="skill-card"><i class="fab fa-git-alt skill-icon"></i><h3>Git</h3><p class="skill-level">Beginner</p></div>
+                    <div class="skill-card"><i class="fab fa-github skill-icon"></i><h3>GitHub</h3><p class="skill-level">Beginner</p></div>
+                </div>
+            </div>
+
+            <% if (skills && skills.length > 0) { %>
+                <div class="skills-category">
+                    <h3><i class="fas fa-certificate"></i> Kemampuan Unggulan</h3>
+                    <div class="skills-grid">
+                        <% skills.forEach(skill => { %>
+                            <div class="skill-card">
+                                <i class="fas fa-award skill-icon"></i>
+                                <h3><%= skill.name %></h3>
+                                <p class="skill-level"><%= skill.level %></p>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Seto<span>Aji</span></div>
+                    <p>Junior Web Developer passionate about building digital solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a><a href="/about">About</a><a href="/skills">Skills</a><a href="/experiences">Experience</a><a href="/educations">Education</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/setopangestu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/seto-aji-pangestu-78a297403/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:seto@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Seto Aji Pangestu | Built with Express.js + Supabase</p></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <style>
+        .skills-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            background: var(--bg-alt);
+            padding: 24px;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        .skills-intro i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .skills-category {
+            margin-bottom: 50px;
+        }
+        .skills-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+        }
+        .skills-category h3 i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .skills-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            font-style: italic;
+            text-align: center;
+        }
+        .skills-note i {
+            margin-right: 6px;
+        }
+    </style>
+</body>
+</html>

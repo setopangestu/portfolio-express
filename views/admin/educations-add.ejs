@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tambah Pendidikan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Tambah Pendidikan Baru</h1>
+    
+    <form method="POST" action="/admin/educations-add">
+        <div>
+            <label>Jenjang / Gelar:</label><br>
+            <input type="text" name="degree" placeholder="Contoh: Rekayasa Perangkat Lunak" required>
+        </div>
+        
+        <div>
+            <label>Nama Institusi:</label><br>
+            <input type="text" name="institution" placeholder="Contoh: SMK Informatika Utama" required>
+        </div>
+        
+        <div>
+            <label>Tahun:</label><br>
+            <input type="text" name="year" placeholder="Contoh: 2020-2023" required>
+        </div>
+        
+        <div>
+            <label>Deskripsi:</label><br>
+            <textarea name="description" rows="5" placeholder="Ceritakan tentang pendidikanmu..."></textarea>
+        </div>
+        
+        <button type="submit">Simpan</button>
+        <a href="/admin/educations">Batal</a>
+    </form>
+</body>
+</html>

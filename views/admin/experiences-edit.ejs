@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Experience</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>✏️ Edit Pengalaman</h1>
+    
+    <div class="admin-menu">
+        <a href="/admin">📋 Projects</a>
+        <a href="/admin/skills">⚡ Skills</a>
+        <a href="/admin/experiences">💼 Experiences</a>
+        <a href="/admin/educations">🎓 Educations</a>
+        <a href="/">👁️ Lihat Portfolio</a>
+        <a href="/logout">🚪 Logout</a>
+    </div>
+    
+    <form method="POST" action="/admin/experiences-edit/<%= experience.id %>">
+        <div>
+            <label>Posisi:</label><br>
+            <input type="text" name="position" value="<%= experience.position %>" required>
+        </div>
+        
+        <div>
+            <label>Perusahaan:</label><br>
+            <input type="text" name="company" value="<%= experience.company %>" required>
+        </div>
+        
+        <div>
+            <label>Lokasi:</label><br>
+            <input type="text" name="location" value="<%= experience.location || '' %>">
+        </div>
+        
+        <div>
+            <label>Tanggal Mulai:</label><br>
+            <input type="text" name="start_date" value="<%= experience.start_date %>" required>
+        </div>
+        
+        <div>
+            <label>Tanggal Selesai:</label><br>
+            <input type="text" name="end_date" value="<%= experience.end_date || '' %>">
+        </div>
+        
+        <div>
+            <label>Deskripsi:</label><br>
+            <textarea name="description" rows="5"><%= experience.description || '' %></textarea>
+        </div>
+        
+        <button type="submit">💾 Update Experience</button>
+        <a href="/admin/experiences">Batal</a>
+    </form>
+</body>
+</html>
